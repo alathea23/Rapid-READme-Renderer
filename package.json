@@ -1,14 +1,26 @@
 {
-  "name": "static-site",
+  "name": "reliable-readme",
   "version": "1.0.0",
-  "description": "",
+  "description": "[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jenny Wannier",
+  "license": "UNLICENSED",
   "dependencies": {
-    "inquirer": "^6.3.1"
-  }
+    "inquirer": "^8.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alathea23/Rapid-READme-Renderer.git"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/alathea23/Rapid-READme-Renderer/issues"
+  },
+  "homepage": "https://github.com/alathea23/Rapid-READme-Renderer#readme"
 }
