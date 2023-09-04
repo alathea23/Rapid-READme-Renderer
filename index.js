@@ -55,19 +55,19 @@ const questions = inquirer
             name: 'email'
         }])
     .then((data) => (
-        markdown(data),
-        console.log(licenseLink),
         answers = data,
         console.log(answers)));
 
 
 //function to write output to README file
-function writeFile(fileName, data) {
+function writeFile(answers) {
     fileName = answers.title + 'README.md'
+    writeText = markdown(answers),
     //console to test code
     console.log(fileName)
+    console.log(writeText)
 
-    fs.writeFile(fileName, data, (err) =>
+    fs.writeFile(fileName, writeText, (err) =>
         err ? console.error(err) : console.log('Professional README created!')
     )
 };
@@ -78,7 +78,7 @@ function writeFile(fileName, data) {
 async function init() {
     const port = process.env.PORT || 3001
     await questions
-    writeFile()
+    writeFile(answers)
 }
 
 // Function call to initialize app

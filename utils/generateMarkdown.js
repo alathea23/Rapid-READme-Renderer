@@ -4,9 +4,9 @@ function renderLicenseBadge(data) {
   let licenseType = data.license; 
   console.log(data.license)
   let yourLicense = ''
-  if(licenseType === "MIT") {
+  if(licenseType === 'MIT') {
     yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
-  } else if (licenseType === "Apache") {
+  } else if (licenseType === 'Apache') {
     yourLicense = `![Apache license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`
   }else if (licenseType === 'Eclipse') {
     yourLicense = `![Eclipse license](https://img.shields.io/badge/License-EPL%201.0-red.svg)`
@@ -53,23 +53,26 @@ function renderLicenseLink(data) {
 
 //renderLicenseLink()
 
-// TODO: Create a function that returns the license section of README
+// function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(data) {
-  renderLicenseBadge(data)
-  renderLicenseLink(data)
-  console.log ("license rendered")
+  const badge = renderLicenseBadge(data)
+  const link = renderLicenseLink(data)
+  console.log (badge, link)
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  renderLicenseBadge(data)
-  renderLicenseLink(data)
-  console.log(data.license)
+  const badge = renderLicenseBadge(data)
+  const link = renderLicenseLink(data)
+  //renderLicenseBadge(data)
+  //console.log(yourLicense)
+  //renderLicenseLink(data)
+  //console.log(data.license)
 
-  return `# ${data.title} 
+  markdown=`# ${data.title} 
 
-  ${yourLicense}
+  ${badge}
 
   ## Description:
   
@@ -91,8 +94,8 @@ ${data.usage}
 
 ## License
 
-[${data.license}](${licenseLink})
-${licenseLink}
+[${data.license}](${link})
+${link}
 
 ## Contributors
 
@@ -107,6 +110,8 @@ ${data.tests}
 Github repository: [${data.github}](https://github.com/${data.github}/)
 or Contact via Email: [${data.email}](mailto:${data.email})  
 `;
+console.log(markdown)
+return markdown
 }
 
 module.exports = generateMarkdown;
