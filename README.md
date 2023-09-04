@@ -20,6 +20,8 @@ requires: Node.js and inquirerer8.2.4 before running through terminal
 
 [Demo](./assets/READMEdemo.webm)
 
+[Video Link](https://drive.google.com/file/d/1Xxp8j6AdgNrIeRQUJNF2JAIDXPmTYImt/view)
+
 ## License:
 
 N/A
