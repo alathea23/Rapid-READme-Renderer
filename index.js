@@ -26,6 +26,7 @@ const questions = inquirer.prompt([
    {
     type: 'dropdown',
     message: 'What license are you using?',
+    choices: ["MIT", "Apache", "Eclipse", "GPLv3", "GPL", "Mozilla", "Perl", "N/A"],
     name: 'license'
    } ,
    {
@@ -54,9 +55,11 @@ const questions = inquirer.prompt([
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    const port = process.env.PORT || 3001
+    questions
+    writeToFile()
+}
 
 // Function call to initialize app
 init();
-
-const port = process.env.PORT || 3001
