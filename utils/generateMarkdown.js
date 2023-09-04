@@ -25,8 +25,6 @@ function renderLicenseBadge(data) {
   return yourLicense;
 }
 
-//renderLicenseBadge()
-
 // function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
@@ -51,25 +49,21 @@ function renderLicenseLink(data) {
   return licenseLink;
 }
 
-//renderLicenseLink()
-
-// function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(data) {
-  const badge = renderLicenseBadge(data)
-  const link = renderLicenseLink(data)
-  console.log (badge, link)
-}
+// didn't use this - I wrote it into my markdown function
+//TODO: function that returns the license section of README
+//function renderLicenseSection(data) {
+  //const badge = renderLicenseBadge(data)
+ // const link = renderLicenseLink(data)
+ // console.log (badge, link)
+//}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const badge = renderLicenseBadge(data)
   const link = renderLicenseLink(data)
-  //renderLicenseBadge(data)
-  //console.log(yourLicense)
-  //renderLicenseLink(data)
   //console.log(data.license)
 
+  //drafting return in markdown of the README file
   markdown=`# ${data.title} 
 
   ${badge}
@@ -78,11 +72,13 @@ function generateMarkdown(data) {
   
   ${data.description}
 
-  ## Table of Contents
+  ## Table of Contents:
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Credits](#credits)
   * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
   
 ## Installation:
 
@@ -92,25 +88,25 @@ ${data.instructions}
 
 ${data.usage}
 
-## License
+## License:
 
-[${data.license}](${link})
+This application is covered under [${data.license}](${link})
 ${link}
 
-## Contributors
+## Contributing:
 
 ${data.contributors}
 
-## Tests
+## Tests:
 
 ${data.tests}
 
-## Questions
+## Questions:
 
-Github repository: [${data.github}](https://github.com/${data.github}/)
-or Contact via Email: [${data.email}](mailto:${data.email})  
+Visit Github repository: [${data.github}](https://github.com/${data.github}/)  
+or Contact via Email: [${data.email}](mailto:${data.email}) with addition questions.
 `;
-console.log(markdown)
+//removing code testing console.logs to keep terminal clean -- console.log(markdown)
 return markdown
 }
 

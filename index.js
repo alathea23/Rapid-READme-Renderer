@@ -36,7 +36,7 @@ const questions = inquirer
         },
         {
             type: 'input',
-            message: 'List any contributors or code sources',
+            message: 'List out guidelines/requirements for future contributors',
             name: 'contributors'
         },
         {
