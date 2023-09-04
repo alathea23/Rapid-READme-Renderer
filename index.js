@@ -4,7 +4,8 @@ const fs = require('fs');
 const markdown = require('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
-const questions = inquirer.prompt([
+inquirer
+.prompt([
     {
         type: 'input',
         message: 'What is your project title?',
@@ -50,13 +51,15 @@ const questions = inquirer.prompt([
         type: 'input',
         message: 'Email address?',
         name: 'email'
-    },
-    ,]);
+    }]);
+    then((response) => 
+    console.log(response));
 
-fileName = title + README.md
 
 // TODO: Create a function to write README file
-function writeFile(fileName, data) {
+function writeFile(fileName, response) {
+    fileName = response.title + README.md
+
     fs.writeFile(fileName, data, (err) =>
         err ? console.error(err) : console.log('Professional README created!')
     )
