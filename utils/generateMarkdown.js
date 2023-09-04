@@ -82,11 +82,11 @@ function generateMarkdown(data) {
   
 ## Installation:
 
-${data.instructions}
+${data.instructions|| 'N/A'}
 
 ## Usage:
 
-${data.usage}
+${data.usage|| 'See Description'}
 
 ## License:
 
@@ -95,15 +95,15 @@ ${link}
 
 ## Contributing:
 
-${data.contributors}
+${data.contributors|| 'Contribution parameters in development.  See contact info below to find out more.'}
 
 ## Tests:
 
-${data.tests}
+${data.tests|| 'None Created Yet'}
 
 ## Questions:
 
-Visit Github repository: [${data.github}](https://github.com/${data.github}/)  
+We would love to hear from you! Visit Github repository: [${data.github}](https://github.com/${data.github}/)  
 or Contact via Email: [${data.email}](mailto:${data.email}) with addition questions.
 `;
 //removing code testing console.logs to keep terminal clean -- console.log(markdown)
