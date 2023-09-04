@@ -1,7 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  let licenseType = license.license; // i think this is problem #1
+function renderLicenseBadge(data) {
+  let licenseType = data.license; // i think this is problem #1
   let yourLicense = ''
   if(licenseType === 'MIT') {
     yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
@@ -18,7 +18,7 @@ function renderLicenseBadge(license) {
   } else if (licenseType === 'Perl') {
     yourLicense = `![Perl license](https://img.shields.io/badge/License-Perl-0298c3.svg)`
   } else {
-    license.license = "N/A"
+    data.license = "N/A"
     yourLicense = ""
   }
   return yourLicense;
@@ -26,8 +26,8 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  let licenseType = license.license; // i think this is problem #1
+function renderLicenseLink(data) {
+  let licenseType = data.license; // i think this is problem #1
   let licenseLink = ''
   if(licenseType === 'MIT') {
     licenseLink = `(https://opensource.org/licenses/MIT)`
@@ -42,7 +42,7 @@ function renderLicenseLink(license) {
   } else if (licenseType === 'Perl') {
     licenseLink = `(https://opensource.org/licenses/Artistic-2.0)`
   } else {
-    license.license = "N/A"
+    data.license = "N/A"
     licenseLink = ""
   }
   return licenseLink;
@@ -50,12 +50,51 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  console.log ()
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.title} 
 
+  ${yourLicense}
+
+  ## Description:
+  
+  ${data.description}
+
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [License](#license)
+  
+## Installation:
+
+${data.instructions}
+
+## Usage:
+
+${data.usage}
+
+## License
+
+[${data.license}](${licenseLink})
+${licenseLink}
+
+## Contributors
+
+${data.contributors}
+
+## Tests
+
+${data.tests}
+
+## Questions
+
+Github repository: [${data.github}](https://github.com/${data.github}/)
+or Contact via Email: [${data.email}](mailto:${data.email})  
 `;
 }
 
