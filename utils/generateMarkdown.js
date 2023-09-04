@@ -1,11 +1,12 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(data) {
-  let licenseType = data.license; // i think this is problem #1
+  let licenseType = data.license; 
+  console.log(data.license)
   let yourLicense = ''
-  if(licenseType === 'MIT') {
+  if(licenseType === "MIT") {
     yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
-  } else if (licenseType === 'Apache') {
+  } else if (licenseType === "Apache") {
     yourLicense = `![Apache license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`
   }else if (licenseType === 'Eclipse') {
     yourLicense = `![Eclipse license](https://img.shields.io/badge/License-EPL%201.0-red.svg)`
@@ -24,10 +25,12 @@ function renderLicenseBadge(data) {
   return yourLicense;
 }
 
-// TODO: Create a function that returns the license link
+//renderLicenseBadge()
+
+// function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
-  let licenseType = data.license; // i think this is problem #1
+  let licenseType = data.license; 
   let licenseLink = ''
   if(licenseType === 'MIT') {
     licenseLink = `(https://opensource.org/licenses/MIT)`
@@ -48,14 +51,22 @@ function renderLicenseLink(data) {
   return licenseLink;
 }
 
+//renderLicenseLink()
+
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
-  console.log ()
+function renderLicenseSection(data) {
+  renderLicenseBadge(data)
+  renderLicenseLink(data)
+  console.log ("license rendered")
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  renderLicenseBadge(data)
+  renderLicenseLink(data)
+  console.log(data.license)
+
   return `# ${data.title} 
 
   ${yourLicense}
