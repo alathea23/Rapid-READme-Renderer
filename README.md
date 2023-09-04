@@ -9,7 +9,7 @@ A quick and professional README creator for busy software professionals
   * [Video Demo](#video)
   * [License](#license)
   * [Contributors](#contributors)
- * [Tests](#tests)
+  * [Tests](#tests)
   * [Questions](#questions)
   
 ## Installation:
